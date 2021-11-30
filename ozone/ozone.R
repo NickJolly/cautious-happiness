@@ -3,6 +3,8 @@ data(ozone)
 #str(ozone)
 #?ozone
 
+ozone <- ozone[1:9]
+
 plot(ozone, pch='.')
 
 model1 <- lm(O3 ~ . ,data=ozone)
@@ -33,7 +35,7 @@ anova(model4)
 ozone_adjusted <- ozone[-c(327,330,286), ]
 model5 <- lm(logO3 ~ ., data=ozone_adjusted)
 model6 <- step(model5, trace=F)
-
+summary(model6)
 plot(model6)
 
 anova(model6)
