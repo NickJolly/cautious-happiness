@@ -38,7 +38,6 @@ summary(model_int)
 # Check which model is preferred
 anova(model_add, model_int, test='Chisq')
 # We reject the hypothesis that the additive model is correct
-# But be aware of over-fitting
 
 # Test for model relevance
 anova(glm(cbind(survive, total-survive) ~ 1, 
@@ -57,9 +56,6 @@ anova(glm(cbind(survive, total-survive) ~ period,
           family=binomial, data=troutegg), 
       model_int, 
       test='Chisq')
-
-# In each case we reject the hypothesis that the model with fewer 
-# parameters is correct
 
 
 # Plotting the fit: Model without interaction
@@ -110,6 +106,9 @@ legend('bottomleft', legend=c('Loc 1', 'Loc 2', 'Loc 3', 'Loc 4', 'Loc 5'),
        lty=c(1,2,3,4,1), box.lty=0, inset=0.01, cex=0.8)
 
 
+# Check which model is preferred
+anova(model_add, model_int, test='Chisq')
+# Reject the null hypothesis that the smaller (additive) model is correct
 
 # We can use the model to predict the chance of survival. For instance:
 newval <- data.frame(location=factor(5), period=6)

@@ -1,4 +1,5 @@
-setwd('/Users/nickjolly/Desktop/site/R/cityofmelb')
+# Dataset available at:
+# https://data.melbourne.vic.gov.au/Environment/Microclimate-Sensor-Readings/u4vh-84j8
 
 library(stringr)
 library(chron)
@@ -73,9 +74,11 @@ ggplot(df_1013, aes(time, temp, size=wind, col=rh)) +
   
 # Figure 3
 p <- ggplot(df, aes(site, temp, size=wind, col=rh)) + 
-  geom_point(alpha=0.8, show.legend=F) +
+  geom_point(alpha=0.8) +
+  scale_size(name='Wind Speed (km/h)') +
   scale_colour_gradientn(colours=c('peru','darkorchid1','deepskyblue2'),
-                         values=c(0,0.5,1)) +
+                         values=c(0,0.5,1),
+                         name='Rel. Humidity (%)') +
   theme(plot.background=element_rect(fill='white'),
         panel.background=element_rect(fill='#f2f2f2'),
         panel.grid.major.x=element_blank(),
@@ -88,7 +91,7 @@ p <- ggplot(df, aes(site, temp, size=wind, col=rh)) +
        x='Site ID', y='Temperature (degrees C)') +
   shadow_mark(alpha = 0.3, size = 1)
 
-animate(p, duration = 60, fps = 20, width = 600, height = 600, 
+animate(p, duration = 60, fps = 20, width = 750, height = 600, 
         renderer = gifski_renderer())
 
 anim_save('anim1.gif')
