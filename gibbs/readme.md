@@ -2,7 +2,9 @@
 
 ## Simple Regression with Bayesian Estimation
 
-The model is <br />
+See this work present at www.njds.com.au/linear <br />
+
+The simple regression model is <br />
 <i>y = alpha + beta * x + epsilon</i> <br />
 where each epsilon is assumed to be normal with mean zero, and variance sigma squared. 
 
