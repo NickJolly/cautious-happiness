@@ -1,5 +1,5 @@
 # Readme
-## Multiple Regression in R
+## Binomial Regression in R
 
 This exercise uses the <i>trouteggs</i> dataset freely available in the faraway package in R. <br />
 See this work presented at www.njds.com.au/linear
