@@ -1,8 +1,8 @@
 # Readme
 ## City of Melbourne Open Data project
 
-The dataset is available for download at https://data.melbourne.vic.gov.au/Environment/Microclimate-Sensor-Readings/u4vh-84j8 <br />
-See this work present at www.njds.com.au/melb
+The dataset is freely available for download at https://data.melbourne.vic.gov.au/Environment/Microclimate-Sensor-Readings/u4vh-84j8 <br />
+See this work presented at www.njds.com.au/melb
 
 ### Requires R packages:
 stringr <br />
