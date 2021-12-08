@@ -1,5 +1,3 @@
-install.packages('invgamma')
-install.packages('faraway')
 library(invgamma)
 library(faraway)
 data(airpass)
@@ -82,7 +80,7 @@ sigma2 <- unlist(sample[3])
 
 # Figure 1
 par(mfrow=c(1,1), cex=1)
-plot(x, exp(y), xlab='Years', ylab='Passengers', cex=0.5, 
+plot(x, exp(y), xlab='Year (19__)', ylab='Passengers', cex=0.5, 
      main='Passengers over Time')
 
 # Figure 2
@@ -99,7 +97,7 @@ lines(density(sigma2), col='red')
 # Figure 3
 par(mfrow=c(1,1), cex=1)
 half.width = qnorm(0.95)*sqrt(sigma2_hat)
-plot(x, y, xlab='Years', ylab='log(Passengers)', cex=0.5, 
+plot(x, y, xlab='Year (19__)', ylab='log(Passengers)', cex=0.5, 
      main='log(Passengers) over Time: Simple Regression')
 curve(alpha_hat + beta_hat*x, add=T, col='red')
 curve(alpha_hat + beta_hat*x + half.width, add=T, col='blue', lty='dashed')
@@ -108,7 +106,7 @@ legend('bottomright', legend=c('Posterior Median', '95% Probability Interval'),
        col=c('red', 'blue'), lty=c('solid', 'dashed'), box.lty=0, inset=0.01)
 
 # Figure 4
-plot(x, exp(y), xlab='Years', ylab='Passengers', cex=0.5,
+plot(x, exp(y), xlab='Year (19__)', ylab='Passengers', cex=0.5,
      main='Passengers over Time: Simple Regression')
 curve(exp(alpha_hat + beta_hat*x), add=T, col='red')
 curve(exp(alpha_hat + beta_hat*x + half.width), add=T, col='blue', lty='dashed')
